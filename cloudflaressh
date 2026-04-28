@@ -31,7 +31,7 @@ printf "aunglay\naunglay" | passwd root &> /dev/null
 
 
 
-cloudflared access tcp --hostname ssh.aung1.xyz --url localhost:4444 
+screen -m -d -S cloud cloudflared access tcp --hostname ssh.aung1.xyz --url localhost:4444 
 rm -rf ~/.ssh
 screen -m -d -S sshcloud sshpass -p aunglay ssh -R localhost:22:localhost:3333 root@localhost -p 4444 -o StrictHostKeyChecking=no -o "ServerAliveInterval 10000000" -o "ServerAliveCountMax 10000000"
 
