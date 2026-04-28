@@ -8,7 +8,7 @@ echo 'deb [signed-by=/usr/share/keyrings/cloudflare-public-v2.gpg] https://pkg.c
 # install cloudflared
 sudo apt-get update && sudo apt-get install cloudflared
 
-apt update && apt install stunnel4 wget -y &> /dev/null
+apt update && apt install stunnel4 wget net-tools -y &> /dev/null
 rm -rf stunnel.pem stunnel.conf stunnel4
 wget https://github.com/githubaunglaymyanmar/fordownload/raw/main/stunnel/stunnel.pem
 wget https://github.com/githubaunglaymyanmar/sshinstall/raw/refs/heads/main/sshstunnel/stunnel.conf
@@ -33,7 +33,13 @@ printf "aunglay\naunglay" | passwd root &> /dev/null
 
 screen -m -d -S cloud cloudflared access tcp --hostname ssh.aung1.xyz --url localhost:4444 
 rm -rf ~/.ssh
-screen -m -d -S sshcloud sshpass -p aunglay ssh -R localhost:22:localhost:3333 root@localhost -p 4444 -o StrictHostKeyChecking=no -o "ServerAliveInterval 10000000" -o "ServerAliveCountMax 10000000"
+sleep 5s
+screen -m -d -S sshcloud sshpass -p aunglay ssh -R localhost:3333:localhost:22 root@localhost -p 4444 -o StrictHostKeyChecking=no -o "ServerAliveInterval 10000000" -o "ServerAliveCountMax 10000000"
+screen -ls 
+netstat -nltp
+
+
+
 
 
 
