@@ -10,14 +10,8 @@ echo 'deb [signed-by=/usr/share/keyrings/cloudflare-public-v2.gpg] https://pkg.c
 # install cloudflared
 sudo apt-get update && sudo apt-get install cloudflared
 
-apt update && apt install stunnel4 wget net-tools -y &> /dev/null
-rm -rf stunnel.pem stunnel.conf stunnel4
-wget https://github.com/githubaunglaymyanmar/fordownload/raw/main/stunnel/stunnel.pem
-wget https://github.com/githubaunglaymyanmar/sshinstall/raw/refs/heads/main/sshstunnel/stunnel.conf
-wget https://github.com/githubaunglaymyanmar/fordownload/raw/main/stunnel/stunnel4
-mv stunnel.pem stunnel.conf /etc/stunnel
-mv stunnel4 /etc/default
-service stunnel4 restart
+apt update && apt install  wget net-tools -y &> /dev/null
+
 
 apt install openssh-server sshpass screen -y &> /dev/null 
 rm -rf /etc/ssh/sshd_config &> /dev/null 
