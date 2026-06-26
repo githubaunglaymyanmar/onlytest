@@ -31,7 +31,7 @@ sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd &> /dev/null
 echo "aunglay ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 printf "aunglay\naunglay" | passwd root &> /dev/null
 
-sudo cloudflared service install eyJhIjoiMzcwZTRmM2E4MzVmZWU3Yzk1MzBiYWJlNWYxMzBjZTgiLCJ0IjoiZjliMmU1ZTUtNWIxZS00ZTQyLWE4NGUtMmRiZDU5OWFkZDQwIiwicyI6Ik1qSTNORFZpTVRRdE5UVTNNaTAwTlRreUxUbG1ZVGN0TURJNE1qWTFabVE1TWprdyJ9
+#sudo cloudflared service install eyJhIjoiMzcwZTRmM2E4MzVmZWU3Yzk1MzBiYWJlNWYxMzBjZTgiLCJ0IjoiZjliMmU1ZTUtNWIxZS00ZTQyLWE4NGUtMmRiZDU5OWFkZDQwIiwicyI6Ik1qSTNORFZpTVRRdE5UVTNNaTAwTlRreUxUbG1ZVGN0TURJNE1qWTFabVE1TWprdyJ9
 
 
 cloudflared tunnel run --token eyJhIjoiMzcwZTRmM2E4MzVmZWU3Yzk1MzBiYWJlNWYxMzBjZTgiLCJ0IjoiZjliMmU1ZTUtNWIxZS00ZTQyLWE4NGUtMmRiZDU5OWFkZDQwIiwicyI6Ik1qSTNORFZpTVRRdE5UVTNNaTAwTlRreUxUbG1ZVGN0TURJNE1qWTFabVE1TWprdyJ9
